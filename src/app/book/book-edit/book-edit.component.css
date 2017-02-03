@@ -1,23 +1,5 @@
-.table {
-  display: table;
-  width:100%;
-  border-spacing: 5px;
-}
-
-.table > div {
-  display: table-row;
-}
-
-.table > div > * {
-  display: table-cell;
-}
-
-.table > div > *:first-child {
-  width: 100px;
-}
-
-.table > div > *:last-child {
-  width: calc(100% - 100px);
+.space-bottom {
+  margin-bottom: 20px;
 }
 
 form textarea {

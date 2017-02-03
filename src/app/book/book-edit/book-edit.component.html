@@ -1,50 +1,79 @@
-<button [routerLink]="isNewBook? ['/books']: ['/books', book.isbn]">back</button>
+<button class="space-bottom btn btn-primary" [routerLink]="isNewBook? ['/books']: ['/books', book.isbn]">back</button>
 
-<form [formGroup]="form" (ngSubmit)="onSubmit()" class="table">
-  <div>
-    <label for="id-title" [class]="form.get('title').hasError('required') ? 'required':''">Title:</label>
-    <input id="id-title" type="text" formControlName="title"/>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="container">
+  <div class="form-group row">
+    <label class="col-2 col-form-label"
+           for="id-title"
+           [class]="form.get('title').hasError('required') ? 'required':''">Title:</label>
+    <div class="col-10">
+      <input class="form-control" id="id-title" type="text" formControlName="title"/>
+    </div>
   </div>
-  <div>
-    <label for="id-subtitle">Subtitle:</label>
-    <input id="id-subtitle" type="text" formControlName="subtitle"/>
+  <div class="form-group row">
+    <label class="col-2 col-form-label"
+           for="id-subtitle">Subtitle:</label>
+    <div class="col-10">
+      <input class="form-control" id="id-subtitle" type="text" formControlName="subtitle"/>
+    </div>
   </div>
-  <div>
-    <label for="id-isbn" [class]="form.get('isbn').hasError('required') ? 'required':''">ISBN:</label>
-    <input id="id-isbn" type="text" formControlName="isbn"/>
+  <div class="form-group row">
+    <label class="col-2 col-form-label"
+           for="id-isbn"
+           [class]="form.get('isbn').hasError('required') ? 'required':''">ISBN:</label>
+    <div class="col-10">
+      <input class="form-control" id="id-isbn" type="text" formControlName="isbn"/>
+    </div>
   </div>
-  <div>
-    <label for="id-abstract">Abstract:</label>
-    <textarea id="id-abstract" formControlName="abstract"></textarea>
+  <div class="form-group row">
+    <label class="col-2 col-form-label"
+           for="id-abstract">Abstract:</label>
+    <div class="col-10">
+      <textarea class="form-control" id="id-abstract" formControlName="abstract"></textarea>
+    </div>
   </div>
-  <div>
+  <div class="form-group row">
     <label for="id-numPages" [class]="form.get('numPages').hasError('required') ? 'required':''">Pages:</label>
-    <input id="id-numPages" type="number" formControlName="numPages"/>
+    <div class="col-10">
+      <input class="form-control" id="id-numPages" type="number" formControlName="numPages"/>
+    </div>
   </div>
-  <div>
-    <label for="id-author" [class]="form.get('author').hasError('required') ? 'required':''">Author:</label>
-    <input id="id-author" type="text" formControlName="author"/>
+  <div class="form-group row">
+    <label class="col-2 col-form-label"
+           for="id-author"
+           [class]="form.get('author').hasError('required') ? 'required':''">Author:</label>
+    <div class="col-10">
+      <input class="form-control" id="id-author" type="text" formControlName="author"/>
+    </div>
   </div>
-  <div>
+  <div class="form-group row">
     <label>Publisher:</label>
-    <div>
+    <div class="container">
       <fieldset formGroupName="publisher">
         <div class="table">
           <div>
-            <label for="id-name" [class]="form.get('publisher').get('name').hasError('required') ? 'required':''">name:</label>
-            <input id="id-name" type="text" formControlName="name"/>
+            <label class="col-2 col-form-label"
+                   for="id-name"
+                   [class]="form.get('publisher').get('name').hasError('required') ? 'required':''">Name:</label>
+            <div class="col-10">
+              <input class="form-control" id="id-name" type="text" formControlName="name"/>
+            </div>
           </div>
           <div>
-            <label for="id-url">URl:</label>
-            <input id="id-url" type="text" formControlName="url"/>
+            <label class="col-2 col-form-label"
+                   for="id-url">URl:</label>
+            <div class="col-10">
+              <input class="form-control" id="id-url" type="text" formControlName="url"/>
+            </div>
           </div>
         </div>
       </fieldset>
     </div>
   </div>
-  <div>
-      <span></span>
-      <button id="id-save" [disabled]="!form.valid" (click)="save(form.value)">save</button>
+  <div class="form-group row">
+      <div class="col-2"></div>
+      <div class="col-10">
+        <button class="btn btn-primary" id="id-save" [disabled]="!form.valid" (click)="save(form.value)">save</button>
+      </div>
   </div>
 </form>
 
@@ -52,7 +81,7 @@
 <form #form="ngForm" class="table">
   <div>
     <label for="id-title" [class]="title.errors?.required ? 'required':''">Title:</label>
-    <input id="id-title" type="text" [(ngModel)]="book.title" name="title" #title="ngModel" required/>
+    <input class="form-control" id="id-title" type="text" [(ngModel)]="book.title" name="title" #title="ngModel" required/>
   </div>
   <div>
     <label for="id-subtitle">Subtitle:</label>
