@@ -1,9 +1,9 @@
 <div *ngFor="let book of books" class="container">
   <h2 [title]="book.isbn">
     <a [routerLink]="[book.isbn]">{{ book.title }}</a>
-    <button class="btn btn-danger" (click)="deleteBook(book.isbn)">X</button>
+    <button class="btn btn-danger" (click)="deleteBook(book.isbn)" tooltip="Remove this book">X</button>
   </h2>
 </div>
 <div class="container">
-  <button class="btn btn-primary" [routerLink]="['add']">Add</button>
+  <button class="btn btn-primary" [routerLink]="['add']" tooltip="Add another book.">Add</button>
 </div>

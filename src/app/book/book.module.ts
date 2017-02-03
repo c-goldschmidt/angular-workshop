@@ -11,6 +11,8 @@ import { CanDeactivateGuard } from "./guards/can-deactivate-book.guard";
 import { ResolveBookList } from "./guards/resolve-book-list.guard";
 import { ResolveBook } from "./guards/resolve-book.guard";
 import { BookEditComponent } from './book-edit/book-edit.component';
+import { TooltipDirective } from "../shared/tooltip.directive";
+import { ShoutPipe } from "../shared/shout.pipe";
 
 @NgModule({
   imports: [
@@ -25,6 +27,8 @@ import { BookEditComponent } from './book-edit/book-edit.component';
     BookDetailComponent,
     TitleBoxComponent,
     BookEditComponent,
+    TooltipDirective,
+    ShoutPipe,
   ],
   providers: [
     CanDeactivateGuard,

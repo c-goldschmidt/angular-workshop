@@ -19,6 +19,7 @@
       "mobile": false,
       "styles": [
         "styles.css",
+        "./app/shared/shared.css",
         "../node_modules/bootstrap/dist/css/bootstrap.css"
       ],
       "scripts": [],
