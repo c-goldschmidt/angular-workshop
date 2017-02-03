@@ -1,4 +1,10 @@
-<h1>
-  {{title}}
-</h1>
-<router-outlet></router-outlet>
+<header class="navbar navbar-default">
+  <div class="container-fluid">
+    <h1>{{title}}</h1>
+  </div>
+</header>
+<div class="container">
+  <div class="jumbotron">
+    <router-outlet></router-outlet>
+  </div>
+</div>

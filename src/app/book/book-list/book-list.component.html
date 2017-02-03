@@ -1,7 +1,9 @@
-<div *ngFor="let book of books">
-  <a [routerLink]="[book.isbn]">
-    <title-box [titleInfo]="book.title" [title]="book.isbn"></title-box>
-  </a>
-  <button (click)="deleteBook(book.isbn)">Remove</button>
+<div *ngFor="let book of books" class="container">
+  <h2 [title]="book.isbn">
+    <a [routerLink]="[book.isbn]">{{ book.title }}</a>
+    <button (click)="deleteBook(book.isbn)">Remove</button>
+  </h2>
 </div>
-<button [routerLink]="['add']">Add</button>
+<div class="container">
+  <h2><button [routerLink]="['add']">Add</button></h2>
+</div>
