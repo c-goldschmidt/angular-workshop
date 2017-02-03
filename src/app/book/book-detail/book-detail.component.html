@@ -1,9 +1,9 @@
 <div>
-  <p><button class="btn btn-primary" [routerLink]="['/books']">back</button></p>
+  <p><button class="btn btn-primary" [routerLink]="['/books']" tooltip="Back to list">back</button></p>
   <h2>{{ book.title }}</h2>
   <h4>{{ book.subtitle }}</h4>
   <p>Author: {{ book.author }} (ISBN: {{ book.isbn }}, {{ book.numPages }} pages)</p>
   <p>{{ book.abstract }}</p>
   <p>Publisher: <a [href]="book.publisher.url" target="_blank">{{ book.publisher.name }}</a></p>
-  <p><button  class="btn btn-primary" [routerLink]="['edit']">Edit book</button></p>
+  <p><button  class="btn btn-primary" [routerLink]="['edit']" tooltip="Edit this book">Edit book</button></p>
 </div>

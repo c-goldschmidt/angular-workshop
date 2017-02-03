@@ -1,7 +1,9 @@
-*[tooltip] {
+*[tooltip],
+*[ng-reflect-tooltip] {
   position: relative;
 }
-*[tooltip]:hover {
+*[tooltip]:hover,
+*[ng-reflect-tooltip]:hover {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }

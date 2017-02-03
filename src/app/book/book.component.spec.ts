@@ -1,7 +1,6 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { RouterModule, RouterOutletMap } from '@angular/router'
 
 import { BookComponent } from './book.component';
 
@@ -11,7 +10,9 @@ describe('BookComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BookComponent ]
+      declarations: [ BookComponent ],
+      imports: [ RouterModule ],
+      providers: [ RouterOutletMap ]
     })
     .compileComponents();
   }));

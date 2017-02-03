@@ -22,7 +22,6 @@ export class BookDataService {
   }
 
   saveBook (book: Book): Observable<Book> {
-    console.log(book);
     return this.http.put(this.detailURL + book.isbn, book).map((resp:Response) => resp.json());
   }
 
@@ -32,6 +31,6 @@ export class BookDataService {
   }
 
   deleteBook(isbn: string): Observable<boolean> {
-    return this.http.delete(this.detailURL + isbn).map((resp:Response) => resp.text() === 'ok');
+    return this.http.delete(this.detailURL + isbn).map((resp:Response) => resp.text() === 'OK');
   }
 }

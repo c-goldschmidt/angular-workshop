@@ -1,4 +1,6 @@
-<button class="space-bottom btn btn-primary" [routerLink]="isNewBook? ['/books']: ['/books', book.isbn]">back</button>
+<button class="space-bottom btn btn-primary"
+        [tooltip]="isNewBook? 'back to list':'Back to details'"
+        [routerLink]="isNewBook? ['/books']: ['/books', book.isbn]">back</button>
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()" class="container">
   <div class="form-group row">
@@ -72,7 +74,7 @@
   <div class="form-group row">
       <div class="col-2"></div>
       <div class="col-10">
-        <button class="btn btn-primary" id="id-save" [disabled]="!form.valid" (click)="save(form.value)">save</button>
+        <button [tooltip]="isNewBook? 'Add this book':'Save this book'" class="btn btn-primary" id="id-save" [disabled]="!form.valid" (click)="save(form.value)">save</button>
       </div>
   </div>
 </form>
