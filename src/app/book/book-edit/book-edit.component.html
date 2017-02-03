@@ -1,0 +1,99 @@
+<button [routerLink]="isNewBook? ['/books']: ['/books', book.isbn]">back</button>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="table">
+  <div>
+    <label for="id-title" [class]="form.get('title').hasError('required') ? 'required':''">Title:</label>
+    <input id="id-title" type="text" formControlName="title"/>
+  </div>
+  <div>
+    <label for="id-subtitle">Subtitle:</label>
+    <input id="id-subtitle" type="text" formControlName="subtitle"/>
+  </div>
+  <div>
+    <label for="id-isbn" [class]="form.get('isbn').hasError('required') ? 'required':''">ISBN:</label>
+    <input id="id-isbn" type="text" formControlName="isbn"/>
+  </div>
+  <div>
+    <label for="id-abstract">Abstract:</label>
+    <textarea id="id-abstract" formControlName="abstract"></textarea>
+  </div>
+  <div>
+    <label for="id-numPages" [class]="form.get('numPages').hasError('required') ? 'required':''">Pages:</label>
+    <input id="id-numPages" type="number" formControlName="numPages"/>
+  </div>
+  <div>
+    <label for="id-author" [class]="form.get('author').hasError('required') ? 'required':''">Author:</label>
+    <input id="id-author" type="text" formControlName="author"/>
+  </div>
+  <div>
+    <span>Publisher:</span>
+    <div>
+      <fieldset formGroupName="publisher">
+        <div class="table">
+          <div>
+            <label for="id-name" [class]="form.get('publisher').get('name').hasError('required') ? 'required':''">name:</label>
+            <input id="id-name" type="text" formControlName="name"/>
+          </div>
+          <div>
+            <label for="id-url">URl:</label>
+            <input id="id-url" type="text" formControlName="url"/>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  <div>
+      <span></span>
+      <button id="id-save" [disabled]="!form.valid" (click)="save(form.value)">save</button>
+  </div>
+</form>
+
+<!--
+<form #form="ngForm" class="table">
+  <div>
+    <label for="id-title" [class]="title.errors?.required ? 'required':''">Title:</label>
+    <input id="id-title" type="text" [(ngModel)]="book.title" name="title" #title="ngModel" required/>
+  </div>
+  <div>
+    <label for="id-subtitle">Subtitle:</label>
+    <input id="id-subtitle" type="text" [(ngModel)]="book.subtitle" name="subtitle" #subtitle="ngModel"/>
+  </div>
+  <div>
+    <label for="id-isbn" [class]="isbn.errors?.required ? 'required':''">ISBN:</label>
+    <input id="id-isbn" type="text" [(ngModel)]="book.isbn" name="isbn" #isbn="ngModel" [disabled]="!isNewBook" required/>
+  </div>
+  <div>
+    <label for="id-abstract">Abstract:</label>
+    <textarea id="id-abstract" [(ngModel)]="book.abstract" name="abstract" #abstract="ngModel"></textarea>
+  </div>
+  <div>
+    <label for="id-pages" [class]="numPages.errors?.required ? 'required':''">Pages:</label>
+    <input id="id-pages" type="number" [(ngModel)]="book.numPages" name="numPages" #numPages="ngModel" required/>
+  </div>
+  <div>
+    <label for="id-author" [class]="author.errors?.required ? 'required':''">Author:</label>
+    <input id="id-author" type="text" [(ngModel)]="book.author" name="author" #author="ngModel" required/>
+  </div>
+  <div>
+    <span>Publisher:</span>
+    <div>
+      <fieldset ngModelGroup="publisher" name="publisher">
+        <div class="table">
+          <div>
+            <label for="id-publisher-name" [class]="name.errors?.required ? 'required':''">Name:</label>
+            <input id="id-publisher-name" type="text" [(ngModel)]="book.publisher.name" name="name" #name="ngModel" required/>
+          </div>
+          <div>
+            <label for="id-publisher-url">URL:</label>
+            <input id="id-publisher-url" type="text" [(ngModel)]="book.publisher.url" name="url" #url="ngModel"/>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  <div>
+      <label for="id-save"></label>
+      <button id="id-save" [disabled]="!form.valid" (click)="save(form.value)">save</button>
+  </div>
+</form>
+-->

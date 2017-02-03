@@ -1,0 +1,29 @@
+.table {
+  display: table;
+  width:100%;
+  border-spacing: 5px;
+}
+
+.table > div {
+  display: table-row;
+}
+
+.table > div > * {
+  display: table-cell;
+}
+
+.table > div > *:first-child {
+  width: 100px;
+}
+
+.table > div > *:last-child {
+  width: calc(100% - 100px);
+}
+
+form textarea {
+  height: 100px;
+}
+
+form .required {
+  color: red;
+}

@@ -1,0 +1,11 @@
+<button [routerLink]="['/books']">back</button>
+<div *ngIf="book">
+  <title-box [titleInfo]="book.title"></title-box>
+  <div>Author: {{ book.author }}</div>
+  <div>Subtitle: {{ book.subtitle }}</div>
+  <div>Abstract: {{ book.abstract }}</div>
+  <div>ISBN: {{ book.isbn }}</div>
+  <div>Pages: {{ book.numPages }}</div>
+  <div>Publisher: <a [href]="book.publisher.url" target="_blank">{{ book.publisher.name }}</a></div>
+  <button [routerLink]="['edit']">Edit book</button>
+</div>
